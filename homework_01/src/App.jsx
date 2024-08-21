@@ -1,7 +1,9 @@
-const Heading = ({ color, text }) => {
-  const headingStyle = { color, fontSize: `48px`, margin: `0px` };
+import './App.css'
 
-  return <h1 style={headingStyle}>{text}</h1>;
+const Heading = ({ color, text }) => {
+  const headingStyle = { color };
+
+  return <h1 className="heading" style={headingStyle}>{text}</h1>;
 };
 
 const Description = ({ fontStyle }) => {
