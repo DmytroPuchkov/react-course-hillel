@@ -20,7 +20,7 @@ export default function List() {
       }
 
       const randomIndex = Math.floor(Math.random() * inactiveItems.length);
-      const newList = [...list];
+      const newList = structuredClone(list);
       const originalIndex = list.indexOf(inactiveItems[randomIndex]);
 
       console.log("Random item", newList[originalIndex]);
@@ -29,7 +29,9 @@ export default function List() {
 
       setList(newList);
     }, 1000);
-  }, []);
+
+    return () => clearInterval(intervalId);
+  }, [list]);
 
   return list.length ? (
     <table>
