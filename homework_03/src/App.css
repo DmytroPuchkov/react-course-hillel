@@ -1,0 +1,7 @@
+.app-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px;
+  padding: 40px;
+  border: 1px dashed black;
+}
