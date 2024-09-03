@@ -2,24 +2,16 @@ import React from "react";
 import "./TaskItem.css";
 import TaskButton from "../TaskButton/TaskButton";
 
-const TaskItem = ({ task, onStatusChange, onArchive }) => (
+const TaskItem = ({ task, buttons }) => (
   <li className="task-item">
     {task.title}
-    {task.status === 0 && (
+    {buttons.map((button, index) => (
       <TaskButton
-        label="In progress"
-        onClick={() => onStatusChange(task.id, 1)}
+        key={index}
+        label={button.title}
+        onClick={() => button.fn(task.id)}
       />
-    )}
-    {task.status === 1 && (
-      <>
-        <TaskButton label="To do" onClick={() => onStatusChange(task.id, 0)} />
-        <TaskButton label="Done" onClick={() => onStatusChange(task.id, 2)} />
-      </>
-    )}
-    {task.status === 2 && (
-      <TaskButton label="To archive" onClick={() => onArchive(task.id)} />
-    )}
+    ))}
   </li>
 );
 
