@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 import { API, TASK_STATUS } from "../../constants/tasks";
+import Task from "../Task/Task";
 
 export default function Tasks() {
   const [tasks, setTasks] = useState([]);
@@ -109,54 +110,32 @@ export default function Tasks() {
     }
   };
 
+  const TASKS = [
+    {
+      title: "To Do",
+      tasks: tasksTodo,
+      btns: [{ title: "In Progress", action: handleTasksProgress }],
+    },
+    {
+      title: "In Progress",
+      tasks: tasksProgress,
+      btns: [
+        { title: "To Do", action: handleTasksTodo },
+        { title: "Done", action: handleTasksDone },
+      ],
+    },
+    {
+      title: "Done",
+      tasks: tasksDone,
+      btns: [{ title: "To Archive", action: handleTasksArchive }],
+    },
+  ];
+
   return (
     <div className="board__wrapper">
-      <div className="tasks__wrapper">
-        <p className="tasks__title">To Do: {tasksTodo.length}</p>
-        {tasksTodo.length ? (
-          <ul className="tasks__list">
-            {tasksTodo.map((item) => (
-              <li key={item.id}>
-                {item.title}{" "}
-                <button onClick={() => handleTasksProgress(item)}>
-                  In Progress
-                </button>
-              </li>
-            ))}
-          </ul>
-        ) : null}
-      </div>
-
-      <div className="tasks__wrapper">
-        <p className="tasks__title">In Progress: {tasksProgress.length}</p>
-        {tasksProgress.length ? (
-          <ul className="tasks__list">
-            {tasksProgress.map((item) => (
-              <li key={item.id}>
-                {item.title}{" "}
-                <button onClick={() => handleTasksTodo(item)}>To Do</button>
-                <button onClick={() => handleTasksDone(item)}>Done</button>
-              </li>
-            ))}
-          </ul>
-        ) : null}
-      </div>
-
-      <div className="tasks__wrapper">
-        <p className="tasks__title">Done: {tasksDone.length}</p>
-        {tasksDone.length ? (
-          <ul className="tasks__list">
-            {tasksDone.map((item) => (
-              <li key={item.id}>
-                {item.title}{" "}
-                <button onClick={() => handleTasksArchive(item)}>
-                  To Archive
-                </button>
-              </li>
-            ))}
-          </ul>
-        ) : null}
-      </div>
+      {TASKS.map((item, index) => (
+        <Task key={index} title={item.title} tasks={item.tasks} btns={item.btns} />
+      ))}
     </div>
   );
 }
