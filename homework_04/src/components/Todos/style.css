@@ -1,0 +1,17 @@
+.item--completed {
+  font-weight: bolder;
+  color: forestgreen;
+}
+
+.todos-form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: fit-content;
+  border: 1px solid black;
+}
+
+label {
+  margin-bottom: 10px;
+}
