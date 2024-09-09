@@ -1,0 +1,18 @@
+.todos__item {
+  text-transform: capitalize;
+}
+
+.todos__item--priority {
+  font-weight: bolder;
+  color: darkmagenta;
+}
+
+.todos__item--active {
+  background-color: rgb(255, 198, 255);
+}
+
+ul {
+  list-style: none;
+  width: fit-content;
+  padding-left: 0;
+}
