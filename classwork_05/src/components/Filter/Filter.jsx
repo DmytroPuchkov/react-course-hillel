@@ -1,6 +1,6 @@
 import React, { useEffect, memo } from "react";
-import { LIST_FILTER, LIST_FILTER_ALL } from "./../../constants/list";
-import useLocalStorage from "./../../hooks/useLocalStorage";
+import { LIST_FILTER, LIST_FILTER_ALL } from "../../constants/list";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 export default memo(function Filter({ liftingFilter }) {
   const [filter, setFilter] = useLocalStorage("filter", LIST_FILTER_ALL);

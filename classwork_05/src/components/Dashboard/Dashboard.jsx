@@ -1,5 +1,5 @@
 import { useState } from "react";
-import List from "./../List/List";
+import List from "../List/List";
 import ColorPicker from "../ColorPicker/ColorPicker";
 import Filter from "../Filter/Filter";
 import "./style.css";

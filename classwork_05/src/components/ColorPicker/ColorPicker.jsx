@@ -1,6 +1,6 @@
 import React, { useEffect, memo } from "react";
-import { DEFAULT_COLOR } from "./../../constants/list";
-import useLocalStorage from "./../../hooks/useLocalStorage";
+import { DEFAULT_COLOR } from "../../constants/list";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 export default memo(function ColorPicker({ liftingColor }) {
   const [color, setColor] = useLocalStorage("color", DEFAULT_COLOR);
