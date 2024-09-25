@@ -3,7 +3,7 @@ import React from 'react';
 export default function UsersRoute() {
   return (
     <div>
-      Users
+      <h3>Users Route</h3>
     </div>
   );
 }
