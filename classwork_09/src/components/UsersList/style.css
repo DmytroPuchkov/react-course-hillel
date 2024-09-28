@@ -1,0 +1,11 @@
+.list__item--admin {
+  color:crimson;
+}
+
+.list__item--lector {
+  text-transform: uppercase;
+}
+
+.list__item--student {
+  text-decoration: underline;
+}

@@ -8,7 +8,6 @@ export default function Layout() {
       <Header />
 
       <aside>
-        <input type="text"></input>
       </aside>
 
       <main>
