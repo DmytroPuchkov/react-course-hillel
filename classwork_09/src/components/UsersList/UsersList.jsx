@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import UsersContext from "../../contexts/UsersContext";
 import "./style.css";
 
@@ -23,7 +24,7 @@ export default function UsersList() {
       <ul>
         {users.map((item) => (
           <li key={item.id} className={getClass(item)}>
-            {item.name}
+            <Link to={`${item.id}`}>{item.name}</Link>
           </li>
         ))}
       </ul>
