@@ -1,0 +1,7 @@
+.country__card {
+  background-color: #e9e9e9;
+  width: fit-content;
+  padding: 16px 24px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}

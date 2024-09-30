@@ -1,0 +1,7 @@
+.link__item {
+  color: black;
+}
+
+.link__item--active {
+  color: rgb(41, 144, 149);
+}

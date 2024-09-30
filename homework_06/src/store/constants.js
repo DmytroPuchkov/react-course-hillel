@@ -1,0 +1,1 @@
+export const DELETE_COUNTRY_ACTION = 'DELETE_COUNTRY';
