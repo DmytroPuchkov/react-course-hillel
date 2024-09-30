@@ -60,7 +60,9 @@ const initArgs = {
 const reducer = (state, { type, payload }) => {
   switch (type) {
     case SET_SORT_USERS_ACTION:
-      return { ...state, sortUsers: payload };
+      if (payload === USERS_SORT_ASC || payload === USERS_SORT_DESC)
+        return { ...state, sortUsers: payload };
+      break;
     case SORT_USERS_ACTION:
       return {
         ...state, users: state.users.sort((a, b) => {

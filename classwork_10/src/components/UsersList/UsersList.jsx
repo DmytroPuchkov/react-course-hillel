@@ -1,6 +1,9 @@
 import React, { useContext, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+
 import AppContext from "../../contexts/AppContext";
 import {
+  SET_SORT_USERS_ACTION,
   SORT_USERS_ACTION,
   CHANGE_USER_STATUS_ACTION,
 } from "./../../store/actions";
@@ -8,9 +11,18 @@ import {
 export default function UsersList() {
   const { users, sortUsers, dispatch } = useContext(AppContext);
 
+  const [searchParams] = useSearchParams();
+  const sortQueryParam = searchParams.get(`sort`);
+
   useEffect(() => {
     dispatch({ type: SORT_USERS_ACTION });
   }, [users, sortUsers]);
+
+  useEffect(() => {
+    if (sortQueryParam) {
+      dispatch({ type: SET_SORT_USERS_ACTION, payload: sortQueryParam });
+    }
+  }, [sortQueryParam]);
 
   const handleChangeStatus = (user) => {
     dispatch({
